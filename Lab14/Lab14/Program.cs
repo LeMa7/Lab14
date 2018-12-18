@@ -130,12 +130,7 @@ namespace Lab14
             }
         }
 
-        static void XmlLinq()
-        {
-            XDocument xDoc = new XDocument(new XElement("OOP",new XElement("Labs",new XElement("Lab1","github"),new XElement("Lab2","Classes"))));
-            xDoc.Save("oop.xml");
-            
-        }
+        
 
         static void Main(string[] args)
         {
@@ -168,8 +163,25 @@ namespace Lab14
             Console.WriteLine("Array:");
             BinaryArraySerialize(candies);
             BinaryArrayDeserialize();
-            XmlLinq();
             XPath();
+            XDocument xDoc = new XDocument(new XElement("Subjects",
+                                            new XElement("OOP",
+                                            new XElement("Labs",
+                                            new XElement("Lab", "github"), new XElement("Lab", "Classes"))),
+                                            new XElement("KSIS",
+                                            new XElement("Labs",
+                                            new XElement("Lab", "DHCP"), new XElement("Lab", "DNS")))));
+            xDoc.Save("oop.xml");
+
+            Console.WriteLine();
+
+            var oopLabs = xDoc.Root.Elements("OOP").GroupBy(t => t.Element("Labs").Value);
+            foreach (IGrouping<string, XElement> a in oopLabs)
+                Console.WriteLine(a.Key+"\n");
+
+            var ksisLabs = xDoc.Root.Elements("KSIS").GroupBy(t => t.Element("Labs").Value);
+            foreach (IGrouping<string, XElement> a in ksisLabs)
+                Console.WriteLine(a.Key + "\n");
         }
     }
 }

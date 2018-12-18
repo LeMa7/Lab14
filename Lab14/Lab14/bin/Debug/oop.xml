@@ -1,7 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<OOP>
-  <Labs>
-    <Lab1>github</Lab1>
-    <Lab2>Classes</Lab2>
-  </Labs>
-</OOP>
+<Subjects>
+  <OOP>
+    <Labs>
+      <Lab>github</Lab>
+      <Lab>Classes</Lab>
+    </Labs>
+  </OOP>
+  <KSIS>
+    <Labs>
+      <Lab>DHCP</Lab>
+      <Lab>DNS</Lab>
+    </Labs>
+  </KSIS>
+</Subjects>

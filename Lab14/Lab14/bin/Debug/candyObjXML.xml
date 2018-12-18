@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Candy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <weight>fds</weight>
-  <shape>fd</shape>
-  <filling>sf</filling>
+  <weight>fd</weight>
+  <shape>fds</shape>
+  <filling>f</filling>
   <coconutChips>false</coconutChips>
 </Candy>
